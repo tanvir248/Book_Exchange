@@ -1,3 +1,4 @@
+import 'package:book_exchange/main.dart';
 import 'package:flutter/material.dart';
 
 class loginScreen extends StatelessWidget {
@@ -66,7 +67,11 @@ Container(
       
     ),
     child: MaterialButton(
-      onPressed: (){},
+      onPressed: (){
+          Navigator.push(context, 
+        MaterialPageRoute(builder: (context) => searchUI()),
+        );
+      },
       child: Text("Login",
       style: TextStyle(
           fontSize: 25,
@@ -93,7 +98,11 @@ Container(
           color: Colors.black.withOpacity(0.8),
       ),
       ),
-      TextButton(onPressed: (){}, child: const Text( "Register Account"))
+      TextButton(onPressed: (){
+        Navigator.push(context, 
+        MaterialPageRoute(builder: (context) => signUpUI()),
+        );
+      }, child: const Text( "Register Account"))
     ],
   ),
             ],
