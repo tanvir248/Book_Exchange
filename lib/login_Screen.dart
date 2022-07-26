@@ -69,7 +69,7 @@ Container(
     child: MaterialButton(
       onPressed: (){
           Navigator.push(context, 
-        MaterialPageRoute(builder: (context) => searchUI()),
+        MaterialPageRoute(builder: (context) => bottomNavUI()),
         );
       },
       child: Text("Login",
