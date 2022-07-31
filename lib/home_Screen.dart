@@ -1,4 +1,5 @@
 import 'package:book_exchange/main.dart';
+import 'package:book_exchange/postBooks.dart';
 import 'package:flutter/material.dart';
 
 
@@ -37,7 +38,7 @@ class homeScreen extends StatelessWidget {
     child: MaterialButton(
       onPressed: (){
         Navigator.push(context, 
-        MaterialPageRoute(builder: (context) => signUpUI()),
+        MaterialPageRoute(builder: (context) => postBooksScreen()),
         );
       },
       child: Text("Exchange Book",
@@ -65,7 +66,7 @@ class homeScreen extends StatelessWidget {
     child: MaterialButton(
       onPressed: (){
         Navigator.push(context, 
-        MaterialPageRoute(builder: (context) => signUpUI()),
+        MaterialPageRoute(builder: (context) => postBooksScreen()),
         );
       },
       child: Text("Donate",
@@ -93,7 +94,7 @@ class homeScreen extends StatelessWidget {
     child: MaterialButton(
       onPressed: (){
         Navigator.push(context, 
-        MaterialPageRoute(builder: (context) => signUpUI()),
+        MaterialPageRoute(builder: (context) => postBooksScreen()),
         );
       },
       child: Text("Sell Book",

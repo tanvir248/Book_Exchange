@@ -1,4 +1,5 @@
 import 'package:book_exchange/home_Screen.dart';
+import 'package:book_exchange/postBooks.dart';
 import 'package:book_exchange/searchBook_Screen.dart';
 import 'package:book_exchange/sign_up_Screen.dart';
 import 'package:flutter/material.dart';
@@ -160,3 +161,30 @@ final tabs = [
 
     );
   }
+
+
+
+class postBooksUI extends StatelessWidget {
+  const postBooksUI({ Key? key }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title:  "Post Books Here",
+      theme: ThemeData(
+        primarySwatch: Colors.teal,
+
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            "Post Books"
+          ),
+        ),
+      body: postBooksScreen(),
+        ),
+    );  
+  }
+}
