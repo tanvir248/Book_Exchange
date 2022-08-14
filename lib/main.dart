@@ -8,6 +8,9 @@ import 'package:book_exchange/home_Screen.dart';
 import 'package:book_exchange/main.dart';
 import 'package:book_exchange/searchBook_Screen.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+import 'package:http/http.dart' as http;
+import 'package:book_exchange/allBooks.dart';
 
 void main() => runApp(loginUI());
 
@@ -55,7 +58,7 @@ class signUpUI extends StatelessWidget {
             "SignUp"
           ),
         ),
-      body: signUpScreen(),
+      body: signUp(),
         ),
     );
   }
@@ -105,6 +108,14 @@ class homehUI extends StatelessWidget {
           title: Text(
             "Home"
           ),
+          actions: <Widget>[
+            IconButton(onPressed: (){
+             
+                Navigator.push(context, 
+        MaterialPageRoute(builder: (context) =>allBookScreen()),
+        );
+            }, icon: Icon(Icons.document_scanner)),
+          ],
         ),
       body: homeScreen(),
         ),
@@ -116,7 +127,7 @@ class homehUI extends StatelessWidget {
 
 
 
-  class bottomNavUI extends StatefulWidget {
+class bottomNavUI extends StatefulWidget {
   const bottomNavUI({ Key? key }) : super(key: key);
 
   @override

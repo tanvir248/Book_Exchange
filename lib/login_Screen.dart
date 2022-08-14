@@ -1,9 +1,49 @@
 import 'package:book_exchange/main.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
-class loginScreen extends StatelessWidget {
-  const loginScreen({ Key? key }) : super(key: key);
 
+
+
+  class loginScreen extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return myLogin();
+  }
+  
+}
+
+loginData(String email, String password) async {
+  
+var headers = {
+  'Accept': 'application/json'
+};
+var request = http.MultipartRequest('POST', Uri.parse('http://192.168.0.121/api/login'));
+request.fields.addAll({
+  'email': email,
+  'password': password
+});
+
+request.headers.addAll(headers);
+
+http.StreamedResponse response = await request.send();
+
+if (response.statusCode == 200) {
+  print(await response.stream.bytesToString());
+}
+else {
+  print(await response.stream.bytesToString());
+   print("Error password or email!");
+}
+
+}
+
+
+
+
+class myLogin extends State<loginScreen> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,7 +64,7 @@ class loginScreen extends StatelessWidget {
                 height: 25,
               ),
               TextFormField(
-                
+                controller: emailController,
                 keyboardType: TextInputType.emailAddress,
                 decoration: const InputDecoration(
                   labelText: "Enter Email",
@@ -36,7 +76,7 @@ class loginScreen extends StatelessWidget {
                 height: 25,
               ),
             TextFormField(
-                
+                controller: passwordController,
                 keyboardType: TextInputType.visiblePassword,
                 obscureText: true,
                 decoration: const InputDecoration(
@@ -63,11 +103,13 @@ Container(
     width: double.infinity,
     decoration: BoxDecoration(
       borderRadius:  BorderRadius.circular(100),
-      gradient: const LinearGradient(colors: [Colors.red, Colors.teal]),
+      gradient: const LinearGradient(colors: [Colors.red, Color.fromARGB(255, 152, 10, 79)]),
       
     ),
     child: MaterialButton(
       onPressed: (){
+        
+        loginData(emailController.text, passwordController.text);
           Navigator.push(context, 
         MaterialPageRoute(builder: (context) => bottomNavUI()),
         );

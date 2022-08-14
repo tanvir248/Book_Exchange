@@ -32,7 +32,7 @@ class homeScreen extends StatelessWidget {
     width: double.infinity,
     decoration: BoxDecoration(
       borderRadius:  BorderRadius.circular(100),
-      gradient: const LinearGradient(colors: [Color.fromARGB(255, 99, 82, 81), Color.fromARGB(255, 34, 223, 62)]),
+      gradient: const LinearGradient(colors: [Color.fromARGB(255, 30, 144, 53), Color.fromARGB(255, 34, 223, 62)]),
       
     ),
     child: MaterialButton(
@@ -60,7 +60,7 @@ class homeScreen extends StatelessWidget {
     width: double.infinity,
     decoration: BoxDecoration(
       borderRadius:  BorderRadius.circular(100),
-      gradient: const LinearGradient(colors: [Colors.red, Colors.teal]),
+      gradient: const LinearGradient(colors: [Color.fromARGB(255, 232, 12, 224), Color.fromARGB(255, 150, 7, 133)]),
       
     ),
     child: MaterialButton(
@@ -88,7 +88,7 @@ class homeScreen extends StatelessWidget {
     width: double.infinity,
     decoration: BoxDecoration(
       borderRadius:  BorderRadius.circular(100),
-      gradient: const LinearGradient(colors: [Color.fromARGB(119, 73, 108, 45), Color.fromARGB(255, 22, 215, 196)]),
+      gradient: const LinearGradient(colors: [Color.fromARGB(119, 227, 111, 10), Color.fromARGB(255, 234, 43, 22)]),
       
     ),
     child: MaterialButton(
@@ -109,8 +109,6 @@ class homeScreen extends StatelessWidget {
     height: 50,
   ),
 
-
-  
             ],
           ),
         ),
