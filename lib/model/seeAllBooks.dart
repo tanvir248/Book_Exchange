@@ -35,7 +35,8 @@ class SearchBooks {
 
 class Book {
   Book(
-      {required this.id,
+      {
+      required this.id,
       required this.name,
       required this.category,
       required this.writer,

@@ -53,6 +53,7 @@ class _allBookScreen extends State<allBookScreen> {
                   allBooks?[index].photo ?? "",
                   fit: BoxFit.cover,
                 ),
+                
               ),
             );
           },

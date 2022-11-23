@@ -19,7 +19,7 @@ registerData(String name, String email, String password, String location,
     String phone) async {
   var headers = {'Accept': 'application/json'};
   var request = http.MultipartRequest(
-      'POST', Uri.parse('http://127.0.0.1:8000/api/register'));
+      'POST', Uri.parse('http://192.168.0.108:8000/api/register'));
   request.fields.addAll({
     'name': name,
     'email': email,
