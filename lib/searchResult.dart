@@ -5,14 +5,18 @@ import 'package:flutter/material.dart';
 import 'package:book_exchange/model/seaAllBookInitializer.dart';
 import 'package:http/http.dart' as http;
 
-class allBookScreen extends StatefulWidget {
+class searchResult extends StatefulWidget {
+  final String keyword;
+  searchResult({required this.keyword});
   @override
   State<StatefulWidget> createState() {
-    return _allBookScreen();
+    return _searchResult(keyword);
   }
 }
 
-class _allBookScreen extends State<allBookScreen> {
+class _searchResult extends State<searchResult> {
+  final String keyword;
+  _searchResult(this.keyword);
   List<Book>? allBooks;
   var isLoaded = false;
 
@@ -25,8 +29,9 @@ class _allBookScreen extends State<allBookScreen> {
 
   getBooksData() async {
     //allBooks = await
-    allBooks = await allBooksDatas().getBooksData();
+    allBooks = await allBooksDatas().searchBooksData(keyword);
     print("Exactly Length is: ");
+    print(keyword);
     print(allBooks?.length);
     if (allBooks != null) {
       setState(() {
