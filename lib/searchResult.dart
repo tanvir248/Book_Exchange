@@ -62,11 +62,12 @@ class _searchResult extends State<searchResult> {
               },
               child: Card(
                 child: ListTile(
+                  visualDensity: VisualDensity(vertical: 4),
                   title: Text(allBooks?[index].name ?? ""),
                   subtitle: Text(allBooks?[index].writer ?? ""),
                   leading: Image.network(
                     allBooks?[index].photo ?? "",
-                    fit: BoxFit.fitWidth,
+                    width: 200,
                   ),
                 ),
               ),

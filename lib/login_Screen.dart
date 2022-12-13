@@ -12,7 +12,7 @@ class loginScreen extends StatefulWidget {
 loginData(String email, String password) async {
   var headers = {'Accept': 'application/json'};
   var request = http.MultipartRequest(
-      'POST', Uri.parse('http://127.0.0.1:8000/api/login'));
+      'POST', Uri.parse('http://test.mrshoikot.com/api/login'));
   request.fields.addAll({'email': email, 'password': password});
 
   request.headers.addAll(headers);

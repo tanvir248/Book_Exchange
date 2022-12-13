@@ -57,11 +57,12 @@ class _allBookScreen extends State<allBookScreen> {
               },
               child: Card(
                 child: ListTile(
+                  visualDensity: VisualDensity(vertical: 4),
                   title: Text(allBooks?[index].name ?? ""),
                   subtitle: Text(allBooks?[index].writer ?? ""),
                   leading: Image.network(
                     allBooks?[index].photo ?? "",
-                    fit: BoxFit.fitWidth,
+                    width: 200,
                   ),
                 ),
               ),

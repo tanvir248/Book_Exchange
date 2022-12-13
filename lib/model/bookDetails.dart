@@ -22,7 +22,7 @@ class bookDetailsScreen extends StatelessWidget {
                   Image.network(
                     book.photo ?? "",
                     fit: BoxFit.cover,
-                    height: 100,
+                    width: 300,
                   ),
                   Text(
                     "Name: " + book.name,
@@ -57,8 +57,19 @@ class bookDetailsScreen extends StatelessWidget {
                   const SizedBox(
                     height: 15,
                   ),
+                  Text(
+                    "Type: " + book.type,
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w100,
+                      color: Color.fromARGB(255, 16, 16, 16),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
                   Divider(
-                    color: Colors.redAccent, //color of divider
+                    color: Colors.grey, //color of divider
                     height: 5, //height spacing of divider
                     thickness: 3, //thickness of divier line
                     indent: 25, //spacing at the start of divider
@@ -98,7 +109,7 @@ class bookDetailsScreen extends StatelessWidget {
                     height: 15,
                   ),
                   Divider(
-                    color: Colors.redAccent, //color of divider
+                    color: Colors.grey, //color of divider
                     height: 5, //height spacing of divider
                     thickness: 3, //thickness of divier line
                     indent: 25, //spacing at the start of divider

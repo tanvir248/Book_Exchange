@@ -35,8 +35,8 @@ class SearchBooks {
 
 class Book {
   Book(
-      {
-      required this.id,
+      {required this.id,
+      required this.type,
       required this.name,
       required this.category,
       required this.writer,
@@ -51,6 +51,7 @@ class Book {
   String category;
   String writer;
   int userId;
+  String type;
   DateTime createdAt;
   DateTime updatedAt;
   User user;
@@ -58,6 +59,7 @@ class Book {
 
   factory Book.fromJson(Map<String, dynamic> json) => Book(
       id: json["id"],
+      type: json["type"],
       name: json["name"],
       category: json["category"],
       writer: json["writer"],
@@ -72,6 +74,7 @@ class Book {
         "name": name,
         "category": category,
         "writer": writer,
+        "type": type,
         "user_id": userId,
         "created_at": createdAt.toIso8601String(),
         "updated_at": updatedAt.toIso8601String(),
